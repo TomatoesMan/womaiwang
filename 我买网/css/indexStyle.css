@@ -1,17 +1,16 @@
 a {
 	color: #000;
 }
-.topNavWrap {
+.topNavWrap,.navWrap,.bannerWrap {
   width: 100%;
 }
 .topNavWrap {
   height: 32px;
   background: #f5f5f5;
 }
-.topNav {
+.topNav,.searchBox,.nav,.banner {
   margin: 0 auto;
   width: 1210px;
-  height: 32px;
 }
 .topNavLeft li {
   float: left;
@@ -58,7 +57,7 @@ a {
 	margin-right: 4px;
 	position: relative;
 }
-.Me .text {
+.text {
 	height: 30px;
 	width: 80px;
 	display: inline-block;
@@ -79,6 +78,7 @@ a {
 	top: 30px;
 	left: 0;
 	z-index: 101;
+	background: #fff;
 	display: none;
 }
 .MeSon li {
@@ -112,21 +112,28 @@ a {
 	font-size: 11px;
 	color: #e4dee7;
 }
-.help {
-	position: absolute;
-}
 .topNavLast li a {
 	margin-right: 12px;
 }
-.topNavLast li:nth-of-type(2) a {
-	margin-left: 16px;
+.topNavLast li:nth-of-type(2) {
+	position: relative;
+}
+.topNavLast li:nth-of-type(2) span {
+	text-align: center;
+}
+.topNavLast li:nth-of-type(2) span .jiantou {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.topNavLast li:nth-of-type(2) .MeSon {
+	width: 70px;
+	height: 72px;
+}
+.topNavLast li:nth-of-type(2) .MeSon li {
+	width: 60px;
 }
 .topNavLast li:nth-of-type(2) a {
 	margin-right: 0;
-}
-.topNavLast li:nth-of-type(2) .jiantou {
-	margin-left: 6px;
-	margin-right: 12px;
 }
 .topNavLast li:nth-of-type(3) a {
 	margin-left: 12px;
@@ -134,17 +141,280 @@ a {
 .topNavLast li:first-of-type a span{
 	color: #8cb91e;
 }
-.topNavLast li:last-of-type a {
+.topNavLast .bg a {
 	display: inline-block;
 	width: 43px;
 	height: 18px;
 	margin-top: 8px;
 	background: url('../image/index.png') no-repeat;
 }
-.topNavLast li:last-of-type a:first-of-type {
+.topNavLast .bg a:first-of-type {
 	margin-left: 24px;
 }
-.topNavLast li:last-of-type a:last-of-type {
+.topNavLast .bg a:last-of-type {
 	background: url('../image/base.png') no-repeat;
 	background-position: -92px -82px; 
+}
+/* search */
+.searchBox {
+	height: 153px;
+	line-height: 148px;
+}
+.search {
+	height: 38px;
+	width: 584px;
+	border: 2px solid  #c30000;
+	position: relative;
+	margin-top: 47px;
+	margin-left: 52px;
+}
+.search input {
+	height: 38px;
+	width: 452px;
+	border: none;
+	position: absolute;
+	left: 31px;
+	outline: none;
+	caret-color: #c30000;
+	color: #bbbb;
+}
+.search button {
+	width: 100px;
+	height: 40px;
+	border: none;
+	background: #c30000;
+	font-size: 18px;
+	color: #fff;
+	position: absolute;
+	left: 484px;
+	top: 0px;
+}
+.search span {
+	display: inline-block;
+	width: 30px;
+	height: 38px;
+	background: url('../image/index.png') no-repeat;
+	background-position: -60px -13px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.heightsearch {
+	font-size: 16px;
+	width: 32px;
+	height: 32px;
+	line-height: 16px;
+	margin-top: 50px;
+	color: #606060;
+	margin-left: 10px;
+}
+.heightsearch:hover a,.keyWord li a:hover {
+	text-decoration: underline;
+	color: #8cb91e;
+}
+.keyWord {
+	position: absolute;
+	left: 440px;
+	top: 62px;
+}
+.keyWord li {
+	float: left;
+	margin: 0 9px;
+}
+.keyWord li a {
+	color: #757575;
+}
+/* nav */
+.navWrap {
+	height: 46px;
+	border-bottom: 2px solid #8cb91e; 
+}
+.nav {
+	height: 46px;
+}
+.navLeft {
+	width: 210px;
+	height: 46px;
+	background: #2d8800;
+	line-height: 46px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+.nav ul li {
+	float: left;
+	margin: 0 22px;
+	line-height: 46px;
+	font-size: 16px;
+}
+.nav ul li a:hover {
+	color: #8cb91e;
+}
+.navright {
+	position: relative;
+}
+.navright .text {
+	width: 200px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+}
+.navright .shopcar {
+	display: inline-block;
+	width: 28px;
+	height: 20px;
+	background: url('../image/index.png');
+	background-position: -48px 0px;
+}
+.navright .arrow {
+	display: inline-block;
+	width: 10px;
+	height: 6px;
+	background: url('../image/index.png');
+	background-position: 0px -40px;
+}
+.navright .MeSon {
+	width: 358px;
+	height: 116px;
+	left: -168px;
+	top: 48px; 
+	text-align: center;
+
+}
+.navright .MeSon p {
+	margin: 0 auto;
+	width: 80px;
+	height: 46px;
+	background: url('../image/cart-no.jpg')
+}
+.navright .MeSon span {
+	line-height: 30px;
+	display: block;
+}
+/* banner */
+.bannerWrap {
+	height: 452px;
+	background: url('../image/bannerbg.png') no-repeat top center;
+}
+.banner {
+	height: 452px;
+}
+.bannerLeft {
+	width: 210px;
+	height: 100%;
+	background: #3ea600;
+}
+.bannerLeft li {
+	height: 32px;
+	line-height: 32px;
+	margin: 8px 0;
+}
+.bannerLeft .bannerLeftbg {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-left: 20px;
+}
+.bannerLeft a {
+	color: #fff;
+	font-size: 14px;
+	margin: 0 10px;
+}
+.bannerLeft a:hover {
+	text-decoration: underline;
+}
+.bannerRight {
+	width: 198px;
+	height: 450px;
+	background: skyblue;
+	border: 1px solid #f7f7f7;
+}
+.bannerRight .bannerRightTop {
+	width: 198px;
+	height: 32px;
+	line-height: 32px;
+}
+.bannerRight .bannerRightTop li {
+	width: 66px;
+	height: 29px;
+	text-align: center;
+	float: left;
+	color: #606060;
+}
+.bannerRightTopOne {
+	background: #fff;
+	border-bottom: 2px solid #2d8800;
+}
+.bannerRightTop+ul li {
+	width: 183px;
+	height: 87px;
+	display: none;
+}
+.bannerRightTop+ul .displayblock {
+	display: block;
+}
+.bannerRightTop+ul {
+	margin-top: 12px;
+	border-bottom: 1px solid #dddddd;
+}
+.bannerRightTop+ul li {
+	padding-left: 16px;
+}
+.bannerRightTop+ul li p {
+	line-height: 22px;
+}
+.bannerRightTop+ul li span {
+	display: inline-block;
+	width: 2px;
+	height: 2px;
+	background: #4d4d4d;
+	vertical-align: middle;
+	margin-right: 8px; 
+}
+.bannerLeft+ul>li {
+	width: 787px;
+	height: 449px;
+	background: #fff;
+	border: 1px solid #2d8800;
+	position: absolute;
+	display: none;
+}
+.bannerLeft+ul>li ul {
+	margin-top: 12px;
+}
+.bannerLeft+ul>li ul li p {
+	display: inline-block;
+	width: 630px;
+	height: 44px;
+	border-bottom: 1px solid #eaeaea;
+	line-height: 44px;
+	margin-left: 10px;
+}
+.bannerLeft+ul>li ul li p a {
+	margin-left : 8px;
+	margin-right: 8px; 
+}
+.bannerLeft+ul>li ul li span {
+	font-size: 16px;
+	color: #eaeaea;
+}
+.bannerLeft+ul>li ul li>span {
+	display: inline-block;
+	width: 112px;
+	text-align: right;
+}
+.bannerLeft+ul>li ul li>span i {
+	display: inline-block;
+	width: 4px;
+	height: 6px;
+	background: url('../image/index.png');
+	background-position: -98px 0;
+}
+.bannerLeft+ul>li ul li>span a {
+	font-size: 12px;
+	font-weight: bold;
+	margin-right: 8px;
 }
