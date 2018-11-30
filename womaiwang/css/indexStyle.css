@@ -1,14 +1,14 @@
 a {
 	color: #000;
 }
-.topNavWrap,.navWrap,.bannerWrap {
+.topNavWrap,.navWrap,.bannerWrap,.tWrap {
   width: 100%;
 }
 .topNavWrap {
   height: 32px;
   background: #f5f5f5;
 }
-.topNav,.searchBox,.nav,.banner {
+.topNav,.searchBox,.nav,.banner,.dtwo,.mainOne,.mainTwo {
   margin: 0 auto;
   width: 1210px;
 }
@@ -300,7 +300,7 @@ a {
 	background: url('../image/bannerbg.png') no-repeat top center;
 }
 .banner {
-	height: 452px;
+	height: 450px;
 }
 .bannerLeft {
 	width: 210px;
@@ -326,10 +326,13 @@ a {
 .bannerLeft a:hover {
 	text-decoration: underline;
 }
+.bannerLeft+ul a:hover {
+	text-decoration: underline;
+	color: #3ea600;
+}
 .bannerRight {
 	width: 198px;
-	height: 450px;
-	background: skyblue;
+	height: 448px;
 	border: 1px solid #f7f7f7;
 }
 .bannerRight .bannerRightTop {
@@ -350,7 +353,7 @@ a {
 }
 .bannerRightTop+ul li {
 	width: 183px;
-	height: 87px;
+	height: 73px;
 	display: none;
 }
 .bannerRightTop+ul .displayblock {
@@ -379,8 +382,10 @@ a {
 	height: 449px;
 	background: #fff;
 	border: 1px solid #2d8800;
+	border-left: none;
 	position: absolute;
 	display: none;
+	z-index: 999;
 }
 .bannerLeft+ul>li ul {
 	margin-top: 12px;
@@ -417,4 +422,181 @@ a {
 	font-size: 12px;
 	font-weight: bold;
 	margin-right: 8px;
+}
+.bannerCenter {
+	position: relative;
+}
+.bannerImage {
+	width: 800px;
+	height: 450px;
+}
+.bannerImage li {
+	position: absolute;
+}
+.bannerImage+ul {
+	position: absolute;
+	left: 248px;
+	bottom: 24px;
+	z-index: 200;
+}
+.hover {
+	width: 21px;
+	height: 21px;
+	background: url('../image/b_icon.png');
+	float: left;
+	margin: 0 7px;
+}
+.jiao li {
+	width: 28px;
+	height: 62px;
+	position: absolute;
+	z-index: 200;
+	background: rgba(0, 0, 0, 0.3);
+	top: 194px;
+	text-align: center;
+	line-height: 62px;
+	color: #fff;
+	font-size: 20px;
+	cursor:pointer;
+	display: none;
+}
+.jiaoLeft {
+	left: 0;
+}
+.jiaoRight {
+	right: 0;
+}
+.bannerRightCenter li {
+	float: left;
+	border-left: 1px dashed #dddddd;
+	border-bottom: 1px dashed #dddddd;
+}
+/* 双十二 */
+.tWrap {
+	height: 800px;
+	background: url('../image/selfbk-1123.png') top center;
+}
+.dtwo {
+	height: 800px;
+}
+.dtwoleft li {
+	position: relative;
+}
+.dtwoleft img {
+	width: 223px;
+	height: 524px;
+	margin-top: 10px;
+}
+.dtworight ul:first-child {
+	width: 980px;
+	height: 414px;
+	margin-top: 8px;
+	margin-left: 6px;
+}
+.dtworight ul:first-child li img {
+	width: 185px;
+	height: 205px;
+}
+.dtworight ul:last-child {
+	margin-left: 6px;
+}
+.dtworight ul:last-child li img {
+	width: 235px;
+	height: 101px;
+}
+.dtworight ul li {
+	float: left;
+	margin-right: 6px;
+	margin-top: 3px; 
+	position: relative;
+}
+/* mainOne */
+.mainOne {
+	height: 374px;
+}
+.mainTop {
+	height: 52px;
+	border-bottom: 2px solid #4bae00;
+	line-height: 52px;
+}
+.mainbottomright {
+	width: 968px;
+	height: 320px;
+	overflow: hidden;
+	background: #ededed;
+	position: relative;
+}
+.mainbottomright ul {
+	height: 320px;
+	position: absolute;
+
+}
+.mainbottomright li {
+	width: 238px;
+	height: 320px;
+	overflow: hidden;
+	float: left;
+	margin-right: 4px;
+	background: #fff;
+}
+.mainbottomright li img {
+	height: 220px;
+}
+.mainbottomright li p {
+	background: #f1f7f4;
+	width: 202px;
+	height: 74px;
+	padding: 14px 18px 12px 18px;
+}
+.mainbottomright li p a {
+	display: inline-block;
+}
+.mainbottomright li p a:hover {
+	text-decoration: underline;
+}
+.mainbottomright li p>a:first-child {
+	font-size: 16px;
+	color: #383838;
+}
+.mainbottomright li p>a:nth-child(2) {
+	font-size: 14px;
+	color: #606060;
+	line-height: 32px;
+}
+.mainbottomright li p>a:first-child:hover,.mainbottomright li p>a:nth-child(2):hover {
+	color: #8cb91e;
+}
+.mainbottomright li p span {
+	font-size: 20px;
+	color: #de0801;
+}
+.mainbottomright li p>a:nth-child(4) {
+	color: #606060;
+	background: url('../image/buyBtn.jpg');
+	width: 80px;
+	height: 26px;
+	color: #fff;
+	text-align: center;
+	line-height: 26px;
+	float: right;
+	vertical-align: top;
+}
+.jiao1 li {
+	width: 32px;
+	height: 38px;
+	position: absolute;
+	z-index: 200;
+	top: 50%;
+	margin-top: -19px;
+	cursor:pointer;
+	display: none;
+	background: rgba(0, 0, 0, 0.1) url('../image/lr.png') no-repeat;
+}
+.jiao1 .jiao1Left {
+	left: 0;
+}
+.jiao1 .jiao1Right {
+	right: 0;
+	background: rgba(0, 0, 0, 0.1) url('../image/lr.png') no-repeat;
+	background-position: -32px 0;
 }
