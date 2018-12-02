@@ -125,9 +125,49 @@ $.fn.extend({
 				$(obj1).hide().css({left:-242})
 			})
 		})
-	}
+	},
 	//小轮播
-	
+	fnTimer : function(index){
+		this.index = index;
+		this.timer = setInterval(function(){
+			this.index++;
+			this.fnAutoplay(this.index);
+		}.bind(this),2000);
+		return this.timer;
+	},
+	fnAutoplay : function(index){
+			if(this.index == $(this).length + 1){
+				this.index = 1;
+				$(".wfgd div").css({left:0})
+			}
+			$(this).eq(this.index==2?0:this.index).css("backgroundPosition","-24px 0").siblings().css("backgroundPosition","0 0");
+			$(".wfgd div").animate({left:-480*this.index});
+	},
+	fnShow : function(obj){
+		this.mouseenter(function(event) {
+				/* Act on the event */
+			$(obj).show();
+		}).mouseleave(function(event) {
+				/* Act on the event */
+			$(obj).hide();
+		});
+	},
+	fnClick : function(){
+		this.mouseenter(function(){
+			/* Act on the event */
+			clearInterval(this.timer);
+			index = $(this).index();
+			console.log(this)
+			this.fnAutoplay(index);
+		}.bind(this)).mouseleave(function(){
+			/* Act on the event */
+			clearInterval(this.timer);
+			this.timer = setInterval(function(){
+				this.index++;
+				this.fnAutoplay(this.index);
+			}.bind(this),2000);
+		}.bind(this));
+	}
 })
 //banner右边的小选项卡
 $(".bannerRightTop li").fnInit( ".bannerRightTop+ul li", "bannerRightTopOne", "displayblock" );
@@ -187,14 +227,7 @@ $(".hover").mouseenter(function() {
 		autoplay();
 	},2000);
 });
-$(".bannerImage").mouseenter(function(event) {
-	/* Act on the event */
-	$(".jiao li").show();
-}).mouseleave(function(event) {
-	/* Act on the event */
-	$(".jiao li").hide();
-});
-$(".jiao li").mouseenter(function(event) {
+$(".bannerCenter").mouseenter(function(event) {
 	/* Act on the event */
 	$(".jiao li").show();
 }).mouseleave(function(event) {
@@ -278,3 +311,7 @@ $(".floorNine .bottomleft").fnxy(".floorNine .bottomleft .aImg")
 $(".floorTen .bottomleft").fnxy(".floorTen .bottomleft .aImg")
 $(".floorEleven>div:first-child .bottomleft").fnxy(".floorEleven>div:first-child .bottomleft .aImg")
 $(".floorTwelve .bottomleft").fnxy(".floorTwelve .bottomleft .aImg")
+//floor中的轮播
+$(".floorRight .hover").fnTimer(0);
+$(".wfgd").fnShow(".wfgd .jiao1 li");
+$(".wfgd .hovers li").fnClick();

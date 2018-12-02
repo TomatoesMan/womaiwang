@@ -1,0 +1,178 @@
+.footerWrap {
+	width: 100%;
+	height: 211px;
+	border-top: 1px solid #ededed;
+	background: #f7f7f7;
+	padding-top: 40px;
+}
+.footer,.about {
+	width: 1210px;
+	margin: 0 auto;
+}
+.footer>ul {
+	margin-left: 70px;
+	width: 143px;
+}
+.footer>ul li:first-child {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 36px;
+}
+.footer>ul li:first-child a {
+	color: #606060;
+}
+.footer>ul li:not(:nth-child(1)) {
+	line-height: 24px;
+}
+.footer>ul li:not(:nth-child(1)) a {
+	color: #989898;
+}
+.footer>ul li a:hover {
+	color: #3ea600;
+	text-decoration: underline;
+}
+.footer span {
+	display: block;
+	float: left;
+	width: 1px;
+	height: 78px;
+	background: #e9e9e9;
+	margin-top: 18px;
+}
+.footer .ervma {
+	margin-left: 60px;
+}
+.footer .ervma dl {
+	margin-right: 22px;
+	text-align: center;
+}
+.footer .ervma dt {
+	color: #c60001;
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 15px;
+}
+.aboutWrap {
+	width: 100%;
+	height: 204px;
+	border-top: 2px solid #3ea600;
+}
+/* about */
+.about {
+	text-align: center;
+}
+.about_link {
+	text-align: center;
+	margin: 30px 0;
+	line-height: 22px;
+	height: 22px;
+	font-size: 12px;
+	color: #606060;
+}
+.about_link span {
+	padding: 18px;
+}
+.about_link a {
+	font-size: 14px;
+	color: #606060;
+}
+.about_link a:hover {
+	text-decoration: underline;
+}
+.copy {
+	color: #989898;
+	text-align: center;
+	padding-left: 212px;
+	height: 88px;
+}
+.copy ul {
+	text-align: left;
+	float: left;
+	margin-left: 24px;
+}
+.copy ul span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url('../image/bottomicon.png') center;
+	background-position: -114px 0;
+	vertical-align: middle;
+}
+.copy a {
+	color: #989898;
+}
+.about>span {
+	display: inline-block;
+	width: 112px;
+	height: 42px;
+	background: url('../image/bottomicon.png');
+}
+/* 悬浮条 */
+.suspend {
+	height: 100%;
+	width: 34px;
+	background: #000;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.suspend .shopcar {
+	color: #fff;
+	height: 108px;
+	width: 18px;
+	padding: 0 8px;
+	text-align: center;
+	margin-top: 170px;
+	cursor: pointer;
+}
+.suspend .shopcar:hover {
+	background: #3da700;
+}
+.suspend .shopcar:hover i {
+	background-position: -178px -42px;
+}
+.suspend .shopcar:hover span {
+	background: #000;
+}
+.suspend i {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url('../image/cart.jpg');
+}
+.suspend .shopcar i {
+	background-position: -178px -8px;
+	margin-top: 10px;
+}
+.suspend .shopcar span {
+	display: inline-block;
+	width: 14px;
+	height: 16px;
+	background: #3da700;
+	border-radius: 4px;
+	margin-top: 9px;
+}
+.suspend ul {
+	margin-top: 160px;
+}
+.suspend li {
+	padding: 0 8px;
+	margin: 14px 0;
+	width: 30px;
+	height: 34px;
+	line-height: 34px;
+	position: relative;
+}
+.suspend li span {
+	position: absolute;
+	display: inline-block;
+	width: 58px;
+	height: 34px;
+	background: #3da700;
+	left: -70px;
+	color: #fff;
+	padding-left: 12px;
+}
+.suspend li:hover {
+	background: #3da700;
+}
