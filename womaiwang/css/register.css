@@ -1,0 +1,60 @@
+.loginHeader p {
+  height: 85px;
+  line-height: 85px;
+  color: #999999;
+  font-size: 16px;
+  margin-right: 22px;
+}
+.loginHeader p a:hover {
+  text-decoration: underline;
+}
+.loginHeader span {
+  display: block;
+  font-size: 20px;
+  line-height: 85px;
+  height: 85px;
+}
+
+.registerMain {
+  width: 1000px;
+  margin: 0 auto;
+  height: 532px;
+  background: url("../image/register.jpg");
+  position: relative;
+}
+.registerMain .registerContent {
+  width: 281px;
+  height: 395px;
+  position: absolute;
+  right: 39px;
+  bottom: 86px;
+}
+.registerMain .registerContent input {
+  margin: 10px 0;
+  width: 265px;
+  height: 33px;
+  border: 1px solid #cccccc;
+  padding-left: 13px;
+}
+.registerMain .registerContent button {
+  width: 100px;
+  height: 33px;
+  background: #43a41b;
+  border: none;
+  color: #fff;
+  margin-left: 25px;
+}
+.registerMain .registerContent .check {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.registerMain .registerContent p a {
+  color: #419bf9;
+}
+.registerMain .registerContent form > a {
+  color: #43a41b;
+}
+
+/*# sourceMappingURL=register.css.map */

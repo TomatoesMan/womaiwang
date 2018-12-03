@@ -1,0 +1,100 @@
+.main {
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	border-top: 1px solid #94bd2b;
+	padding: 20px 0 10px 0;
+	position: relative;
+	.loginContent {
+		width: 384px;
+		height: 464px;
+		position: absolute;
+		right: 34px;
+		bottom: 14px;
+		padding: 1px;
+		background: #dcdddd;
+	}
+	.mc_outside {
+		width: 378px;
+		height: 458px;
+		border: 3px solid #ebebeb;
+		background: #fff;
+		padding: 1px;
+	}
+	.mc_inside {
+		width: 312px;
+		height: 442px;
+		background: #f7f8f8;
+		padding: 14px 33px 0 33px;
+		form {
+			height: 188px;
+			border-bottom: 1px dashed #b5b5b6;
+			input {
+				width: 302px;
+				height: 26px;
+				border: 1px solid #cccccc;
+			}
+			input::-webkit-input-placeholder{
+				color: #aaaaaa;
+			};
+			a {
+				display: block;
+				text-align: right;
+				padding-right: 4px;
+				color: #aaaaaa;
+				height: 24px;
+				line-height: 24px;
+			}
+			button {
+				width: 210px;
+				height: 30px;
+				border: none;
+				background: url("../image/login.png");
+				background-position: 0 -5px;
+				margin-top: 34px;
+				color: #fff;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.registerBtn {
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				background: url("../image/login.png");
+				background-position: -89px -149px;
+				text-align: center;
+				line-height: 30px;
+				color: #479202;
+				font-size: 16px;
+				font-weight: bold;
+				margin-left: 18px;
+			}
+		}
+	}
+	.loginTitle {
+		font-size: 16px;
+		color: #595757;
+		margin-bottom: 22px;
+	}
+	.partner {
+		line-height: 44px;
+		color:#595757;
+		li {
+			float: left;
+		}
+		i {
+			display: inline-block;
+			width: 16px;
+			height: 20px;
+			background: url("../image/login.png");
+			background-position: -209px -75px;
+			margin-right: 6px;
+			margin-left: 16px;
+			vertical-align: middle;
+		}
+		a {
+			margin-right: 13px;
+			color: #807e7e;
+		}
+	}
+}
