@@ -28,19 +28,60 @@
   background: #f7f8f8;
   padding: 14px 33px 0 33px;
 }
-.main .mc_inside form {
-  height: 188px;
+.main .mc_inside .uform {
+  height: 218px;
   border-bottom: 1px dashed #b5b5b6;
+  position: relative;
 }
-.main .mc_inside form input {
-  width: 302px;
+.main .mc_inside .uform input {
+  width: 296px;
   height: 26px;
   border: 1px solid #cccccc;
+  padding-left: 6px;
+  outline: none;
 }
-.main .mc_inside form input::-webkit-input-placeholder {
+.main .mc_inside .uform .message {
+  background: #ffebec;
+  width: 282px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 7px;
+  color: #ff8080;
+  position: absolute;
+  top: -6px;
+  left: 0px;
+  z-index: 98;
+  display: none;
+}
+.main .mc_inside .uform div {
+  margin-top: 34px;
+  position: relative;
+}
+.main .mc_inside .uform div .kanbuqing {
+  display: inline;
+  position: absolute;
+  right: 0;
+  top: -24px;
+}
+.main .mc_inside .uform div p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.main .mc_inside .uform .yanzhengma {
+  width: 170px;
+  height: 26px;
+}
+.main .mc_inside .uform div p {
+  width: 75px;
+  height: 25px;
+  border: 1px solid #b5b5b6;
+  padding: 1px;
+  cursor: pointer;
+}
+.main .mc_inside .uform input::-webkit-input-placeholder {
   color: #aaaaaa;
 }
-.main .mc_inside form a {
+.main .mc_inside .uform a {
   display: block;
   text-align: right;
   padding-right: 4px;
@@ -48,7 +89,7 @@
   height: 24px;
   line-height: 24px;
 }
-.main .mc_inside form button {
+.main .mc_inside .uform button {
   width: 210px;
   height: 30px;
   border: none;
@@ -58,8 +99,9 @@
   color: #fff;
   font-size: 16px;
   font-weight: bold;
+  float: left;
 }
-.main .mc_inside form .registerBtn {
+.main .mc_inside .uform .registerBtn {
   display: inline-block;
   width: 80px;
   height: 30px;
@@ -71,6 +113,8 @@
   font-size: 16px;
   font-weight: bold;
   margin-left: 18px;
+  margin-top: 34px;
+  float: left;
 }
 .main .loginTitle {
   font-size: 16px;

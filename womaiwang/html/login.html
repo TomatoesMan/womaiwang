@@ -20,12 +20,20 @@
 			<div class="mc_outside">
 				<div class="mc_inside">
 					<div class="loginTitle">请登录中粮我买网</div>
-					<form action="" method="post">
-						<input placeholder="用户名/邮箱/手机号" type="" name="">
+					<section class="uform">
+						<input class="uname" placeholder="用户名/邮箱/手机号" type="" name="">
+						<div class="message s1"></div>
 						<a href="">忘记密码？</a>
-						<input placeholder="密码" type="password" name="">
-						<button type="submit">登录</button><a href="register.html" class="registerBtn">注册</a>
-					</form>
+						<input placeholder="密码" class="pwd" type="password" name="">
+						<div class="message s2" style="top: 47px;"></div>
+						<div>
+							<input class="yanzhengma" placeholder="验证码" type="" name="">
+							<div class="message s3"></div>
+							<a class="kanbuqing" href="javascript:;">看不清 换一张</a>
+							<p class="right yzm"></p>
+						</div>
+						<button>登录</button><a href="register.html" class="registerBtn">注册</a>
+					</section>
 					<div class="partner">
 						<p>使用合作伙伴账户登录我买网</p>
 						<ul>
@@ -56,3 +64,5 @@
 </body>
 </html>
 <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/global.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>

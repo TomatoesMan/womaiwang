@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .loginHeader p {
   height: 85px;
   line-height: 85px;
@@ -35,6 +36,34 @@
   height: 33px;
   border: 1px solid #cccccc;
   padding-left: 13px;
+  outline: none;
+}
+.registerMain .registerContent div {
+  position: absolute;
+  left: 0;
+  top: -9px;
+  height: 18px;
+  color: #ff8080;
+  font-family: 瀹嬩綋;
+  position: absolute;
+  background: #fee6e7;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #faa2a6;
+  border-image: initial;
+  padding: 0px 20px 0px 16px;
+  display: none;
+}
+.registerMain .registerContent i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: url("../image/jiantou.png");
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  z-index: 98;
+  display: none;
 }
 .registerMain .registerContent button {
   width: 100px;
@@ -43,6 +72,7 @@
   border: none;
   color: #fff;
   margin-left: 25px;
+  outline: none;
 }
 .registerMain .registerContent .check {
   width: 14px;
@@ -53,7 +83,7 @@
 .registerMain .registerContent p a {
   color: #419bf9;
 }
-.registerMain .registerContent form > a {
+.registerMain .registerContent .uform > a {
   color: #43a41b;
 }
 

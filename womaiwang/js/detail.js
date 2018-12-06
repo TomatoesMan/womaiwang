@@ -43,22 +43,25 @@ $(".priceSmall:eq(0)>i").fnMove(".priceSmall:eq(0)>i")
 $(".priceSmall:eq(1)>i").fnMove(".priceSmall:eq(1)>i")
 $(".priceSmall:eq(2)>i").fnMove(".priceSmall:eq(2)>i")
 $.fn.extend({
-	// fnSmall : function(){
-	// 	this.
-	// }
+	fnSmall : function(){
+		this.mouseenter(function(){
+			$(this).addClass("bordergreen").siblings().removeClass("bordergreen");
+			this.index = $(this).index();
+			$(".min li img").attr("src","../image/564393_"+ (this.index + 1)+"_pic500.jpg");
+			$(".big li img").attr("src","../image/564393_"+ (this.index + 1)+"_pic1080.jpg");
+		})
+		return this;
+	},
 	fnZoom : function(){
-		this.fnEnter().fnDrgat().fnLeave();
+		$(".min").fnEnter().fnDrgat().fnLeave();
 	},
 	fnEnter : function(){
 		this.mouseenter(function(event) {
 			/* Act on the event */
-			var e = event || window.event;
-			this.showx = e.pageX - this.offset().left - $("mask").width() / 2;
-			this.showy = e.pageY - this.offset().top - $("mask").height() / 2;
-			$(".mask").show({"left":this.showx,"top":this.showy},0);
+			$(".mask").show();
 			$(".big").show();
 		}.bind(this));
-		return $(".mask");
+		return this;
 	},
 	fnLeave : function(){
 		this.mouseleave(function(event) {
@@ -69,40 +72,59 @@ $.fn.extend({
 		return this;
 	},
 	fnDrgat : function(){
-		this.bind("mouseenter",function(event){
-			/* Act on the event */
+		this.bind("mousemove", function(event){
 			var e = event || window.event;
-			this.disx = e.pageX - this.position().left ;
-			this.disy = e.pageY - this.position().top ; 
-			$(document).bind("mousemove", function(event){
-				var e = event || window.event;
-				this.fnMove(e);
-			}.bind(this));
-			$(document).bind("mouseup", function(event) {
-				/* Act on the event */
-				this.fnUp();
-			}.bind(this));
-			return false;
+			this.fnMove(e);
 		}.bind(this));
-		return $(".min");
+		return this;
 	},
 	fnMove : function(e){
-		this.x = e.pageX - this.disx; 
-		this.y = e.pageY - this.disy;
-		this.maxL = $(".min").width() - this.width();
-		this.maxT = $(".min").height() - this.height();
+		this.x = e.pageX - this.offset().left - $(".mask").width() / 2; 
+		this.y = e.pageY - this.offset().top - $(".mask").height() / 2;
+		this.maxL = this.width() - $(".mask").width();
+		this.maxT = this.height() -$(".mask").height();
 		this.x = Math.min (Math.max( 0, this.x ),this.maxL);
 		this.y = Math.min (Math.max( 0, this.y ),this.maxT);
-		this.css("left",this.x);
-		this.css("top",this.y);
+		$(".mask").css("left",this.x);
+		$(".mask").css("top",this.y);
 		//大图移动
 		this.X = this.x * ($(".big img").width() - $(".big").width()) / this.maxL;
 		this.Y = this.y * ($(".big img").height() - $(".big").height()) / this.maxT;
 		$(".big img").css("left",-this.X);
 		$(".big img").css("top",-this.Y);
 	},
-	fnUp : function(){
-		$(document).unbind("mousemove mouseup");
+})
+$(".small li").fnSmall().fnZoom();
+$(".guige i").click(function(){
+	$(this).addClass('biankuang').siblings().removeClass('biankuang');
+	$(this).parent().next().children("b").html( $(this).html() )
+})
+$(".shuliang").on("click","span",function(){
+	if( $(this).html() == "+" ){
+		$(this).prev().val( parseInt($(this).prev().val()) + 1)
+	}else{
+		if( $(this).next().val() != 1 ){
+			$(this).next().val( parseInt($(this).next().val()) - 1)
+		}else{
+			return;
+		}
+		
 	}
 })
-$(".min").fnZoom();
+//加入购物车
+$(".jiaru").click(function(){
+	var arr = [];
+	var json = {};
+	json = {
+		"pid" : $(this).data("pid"),
+		"pname" : $(this).data("pname"),
+		"src" : $(this).data("src"),
+		"price" : $(this).data("price"),
+	} 
+	arr.push(json)
+	localStorage.setItem("pinfo", JSON.stringify(arr));
+})
+$(".saosao").click(function(){
+	var s = localStorage["pinfo"];
+	console.log(JSON.parse(s));
+})

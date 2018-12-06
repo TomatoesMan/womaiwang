@@ -133,7 +133,7 @@ $.fn.extend({
 			this.index++;
 			this.fnAutoplay(this.index);
 		}.bind(this),2000);
-		return this.timer;
+		return this;
 	},
 	fnAutoplay : function(index){
 			if(this.index == $(this).length + 1){
@@ -153,13 +153,13 @@ $.fn.extend({
 		});
 	},
 	fnClick : function(){
+		var that = this;
 		this.mouseenter(function(){
 			/* Act on the event */
-			clearInterval(this.timer);
+			clearInterval(that.timer);
 			index = $(this).index();
-			console.log(this)
-			this.fnAutoplay(index);
-		}.bind(this)).mouseleave(function(){
+			that.fnAutoplay(index);
+		}).mouseleave(function(){
 			/* Act on the event */
 			clearInterval(this.timer);
 			this.timer = setInterval(function(){
@@ -260,7 +260,38 @@ $(".bannerRightCenter li").on("mouseenter", "img", function(){
 	$(this).attr("src","image/"+src+".jpg");
 })
 //dtwo
-$(".dtwo li").mouseenter(function(event) {
+$.ajax({
+	type : "get",
+	url : "json/doubleTwo.json",
+	success : function(msg){
+		var arr = msg.list;
+		var str = `<ul class="dtwoleft left">
+						<li><a href=""><img src="image/${arr[0].src}" alt=""></a></li>
+					</ul>
+					<div class="dtworight right">
+						<ul>
+							<li><a href=""><img src="image/${arr[1].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[2].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[3].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[4].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[5].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[6].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[7].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[8].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[9].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[10].src}" alt=""></a></li>
+						</ul>
+						<ul>
+							<li><a href=""><img src="image/${arr[11].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[12].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[13].src}" alt=""></a></li>
+							<li><a href=""><img src="image/${arr[14].src}" alt=""></a></li>
+						</ul>
+					</div>`
+	$(".dtwo").html(str);
+	}
+})
+$(".dtwo").on("mouseenter", "li",function(event) {
 	/* Act on the event */
 	this.div = $("<div></div>");
 	this.div.css({'width': $(this).width(),
@@ -270,7 +301,7 @@ $(".dtwo li").mouseenter(function(event) {
 		     'left':0,
 		 	 'top':0});
 	this.div.appendTo($(this))
-}).mouseleave(function(event) {
+}).on("mouseleave", "li", function(event) {
 	/* Act on the event */
 	this.div.remove();
 });
@@ -312,6 +343,32 @@ $(".floorTen .bottomleft").fnxy(".floorTen .bottomleft .aImg")
 $(".floorEleven>div:first-child .bottomleft").fnxy(".floorEleven>div:first-child .bottomleft .aImg")
 $(".floorTwelve .bottomleft").fnxy(".floorTwelve .bottomleft .aImg")
 //floor中的轮播
-$(".floorRight .hover").fnTimer(0);
+$(".floorRight .hover").fnTimer(0).fnClick();
 $(".wfgd").fnShow(".wfgd .jiao1 li");
-$(".wfgd .hovers li").fnClick();
+//吸顶操作
+$(window).scroll(function(){
+	if( $(document).scrollTop() > 945){
+		$(".searchWrap").css({"position":"fixed","z-index":999,"top":0,"background":"url('image/hbg.png') repeat-x","backgroundSize":"auto 153px"});
+		$(".keyWord").hide();
+	}else{
+		$(".searchWrap").css({"position":"initial","background":"#fff"});
+		$(".keyWord").show();
+	}
+})
+//楼梯
+$(window).scroll(function(){
+	if( $(document).scrollTop() > 1575 && $(document).scrollTop() < $(".lastContent").offset().top){
+		$(".stairs").show();
+	}else{
+		$(".stairs").hide();
+	}
+	var index = Math.floor(($(document).scrollTop() - $(".floorOne").offset().top) / $(".floorOne").height());
+	if(index >=0){
+		$(".stairs li").eq(index).addClass("active").siblings().removeClass('active');
+	}
+})
+$(".stairs li").click(function(){
+	$(this).addClass("active").siblings().removeClass("active");
+	var index = $(this).index();
+	$(document).scrollTop( $(".floorOne").offset().top + $(".floorOne").height()*index )
+})
